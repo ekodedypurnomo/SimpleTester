@@ -5,16 +5,20 @@ Create your own PHP library then test it using SimpleTester
 try commit
 
 ### Testing one or more classes
-```
+```php
 <?php
 
 // sample class to test
 class SampleClass{
+
 	private $book = 'a novel';
+	
 	public $written = null;
+	
 	function read(){
 		return 'reading '.$this->book;
 	}
+	
 	function write($value = null){
 		$this->written = $value;
 		return 'writing '.$value;
@@ -37,14 +41,17 @@ $tester->subtest('Test for SampleClass', function($subtest) use($tester){
 ```
 ### Haw about result ?
 Create your own result style
-```
+```php
 echo 'Result:<br/>';
+
 foreach ( $tester->getSubtests() as $subtest) {
 	$subtestName = $subtest->getName();
 	$tested = $subtest->countTests();
 	$passed = $subtest->countPassed();
 	$failed = $subtest->countFailed();
+	
 	echo "<b> $subtestName: $tested tests ($passed passed, $failed failed). </b><br/>";
+	
 	foreach ($subtest->getTests() as $testName => $result) {
 		echo "* $testName is => ".($result ? 'Success' : 'Failed')."<br/>";
 	}
