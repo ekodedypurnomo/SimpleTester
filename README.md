@@ -4,7 +4,8 @@ Simple class tester for PHP
 Create your own PHP library then test it using SimpleTester
 try commit
 
-,,,
+### Testing on or more classes
+```
 <?php
 
 // sample class to test
@@ -33,9 +34,10 @@ $tester->subtest('Test for SampleClass', function($subtest) use($tester){
 	$subtest->test('"something" should be keep on property', $obj->written == 'something');
 });
 
-
-// how about result?
-// create with your own style
+```
+### Haw about result ?
+Create your own result style
+```
 echo 'Result:<br/>';
 foreach ( $tester->getSubtests() as $subtest) {
 	$subtestName = $subtest->getName();
@@ -47,4 +49,7 @@ foreach ( $tester->getSubtests() as $subtest) {
 		echo "* $testName is => ".($result ? 'Success' : 'Failed')."<br/>";
 	}
 }
-,,,
+```
+
+### Then what ?
+its done, so simple is it?
