@@ -4,7 +4,7 @@ Simple class tester for PHP
 Create your own PHP library then test it using SimpleTester
 try commit
 
-### Testing on or more classes
+### Testing one or more classes
 ```
 <?php
 
